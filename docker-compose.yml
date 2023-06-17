@@ -1,6 +1,7 @@
 services:
 
   ids:
+    image: jag3705/thi-forensics-exp-ids
     build:
       context: ./ids
       dockerfile: Snort_Ngnix.Dockerfile
@@ -36,6 +37,7 @@ services:
       - './log/web:/var/log/traefik'
 
   frontend:
+    image: jag3705/thi-forensics-exp-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -56,6 +58,7 @@ services:
       retries: 20
 
   backend:
+    image: jag3705/thi-forensics-exp-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -116,6 +119,7 @@ services:
     command: --log-bin=/var/log/mysql/mysql-bin.log
 
   token-crawler:
+    image: jag3705/thi-forensics-exp-token-crawler
     build:
       context: ./offensive/token-crawler
       dockerfile: Dockerfile
