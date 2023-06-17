@@ -1,0 +1,12 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div
+      fxFlex="25%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let student of students"
+    >
+      <app-student-card [student]="student"></app-student-card>
+    </div>
+  </div>
+</div>

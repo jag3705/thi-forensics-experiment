@@ -1,0 +1,18 @@
+.me-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: left;
+}
+
+.me-big-avatar
+{
+  background-size: cover;
+  max-width: 580px;
+}

@@ -1,0 +1,27 @@
+<div class="register-div">
+  <mat-card class="register-card">
+    <mat-card-content>
+      <form>
+        <h2>Register</h2>
+        <mat-form-field>
+          <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Mtr. Number" [(ngModel)]="mtr" name="mtr" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="E-Mail Address" [(ngModel)]="email" name="email" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+        </mat-form-field>
+        <span class="warning" *ngIf="message">{{message}}</span>
+      </form>
+      <mat-card-actions>
+        <button mat-raised-button (click)="onClickRegister()" color="primary">Register</button>
+        <button mat-button color="accent" routerLink="/login">Login</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+</div>

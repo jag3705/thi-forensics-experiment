@@ -1,0 +1,17 @@
+<div class="me-div">
+  <mat-card class="me-card">
+    <mat-card-header>
+       <mat-card-title>{{me?.name}}</mat-card-title>
+      <mat-card-subtitle>Mtr-No: {{me?.mtr}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <span #bioElement [innerHTML]="bioHtml | markupHtml : 'html'"></span>
+      <img *ngIf="me?.avatar" class="me-big-avatar" mat-card-image src="http://backend.thi-app.test/storage/user/{{me?.avatar}}" alt="Photo of {{me?.name}}">
+      <mat-card-actions>
+        <button mat-button (click)="onClickShowChangeMetaDialog()" color="primary">Update Bio</button>
+        <button mat-button (click)="onClickShowAvatarUploadDialog()" color="primary">Update Avatar</button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+
+</div>

@@ -1,0 +1,58 @@
+alert http
+(
+    msg:"PHP Access";
+    flow:to_server,established;
+    http_uri;
+    content:".php",fast_pattern,nocase;
+    sid:10000100;
+)
+
+alert http
+(
+    msg:"Access Denied";
+    flow:to_client,established;
+    http_stat_code; content:"401";
+    sid:10000101;
+)
+
+alert http
+(
+    msg:"Access Forbidden";
+    flow:to_client,established;
+    http_stat_code; content:"403";
+    sid:10000102;
+)
+
+
+alert http
+(
+    msg:"SQL File Download";
+    flow:to_client,established;
+    http_raw_request; content:".sql";
+    http_stat_code; content:"200";
+    sid:10000103;
+)
+
+alert http
+(
+    msg:"SQL File Access Attempt";
+    flow:to_client,established;
+    http_raw_request; content:".sql";
+    http_stat_code; content:"404";
+    sid:10000104;
+)
+
+alert http (
+  msg:"JavaScript Embed";
+  flow:to_server,established;
+  file_data;
+  content:"<script>";
+  sid:10000105;
+)
+
+alert http (
+  msg:"Big Payload";
+  flow:to_client,established;
+  dsize:>10000;
+  sid:10000106;
+)

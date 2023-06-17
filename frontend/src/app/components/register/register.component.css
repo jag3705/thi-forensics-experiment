@@ -1,0 +1,23 @@
+.register-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.register-card form {
+  width: 100%;
+}
+
+mat-form-field {
+  display: block;
+}
+.warning{
+  color : red;
+}

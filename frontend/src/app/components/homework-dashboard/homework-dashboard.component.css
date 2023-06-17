@@ -1,0 +1,26 @@
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  width: 240px;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nothing-card {
+  width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.tab-content{
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}

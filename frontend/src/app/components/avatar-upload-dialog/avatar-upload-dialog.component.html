@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>Change Avatar</h2>
+<form [formGroup]="uploadAvatarForm" class="form-container">
+  <mat-dialog-content>
+    <mat-form-field>
+      <div>
+        <mat-toolbar>
+          <!-- Display files names -->
+          <input formControlName="avatar"  matInput [(ngModel)]="fileAttr" readonly name="avatar" />
+          <!-- Browse Button -->
+          <button mat-flat-button color="primary">Select File</button>
+        </mat-toolbar>
+        <!-- Fetch selected filed on change -->
+        <input
+          type="file"
+          #fileInput
+          id="uploadFile"
+          (change)="uploadFileEvt($event)"
+          name="avatar"
+          [multiple]="false"
+          accept="*"
+        />
+      </div>
+    </mat-form-field>
+    <span class="warning" *ngIf="message">{{message}}</span>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [disabled]="uploadAvatarForm.invalid" (click)="onClickSubmit()">Submit
+    </button>
+  </mat-dialog-actions>
+
+</form>

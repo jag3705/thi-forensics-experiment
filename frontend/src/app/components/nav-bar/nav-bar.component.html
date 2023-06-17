@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span>THI</span>
+  <mat-divider [inset]="true" [vertical]="true"></mat-divider>
+  <button mat-button routerLink="/uploads" routerLinkActive="mat-accent">Uploads</button>
+  <mat-divider [vertical]="true"></mat-divider>
+  <button mat-button routerLink="/tasks" routerLinkActive="mat-accent">Tasks</button>
+  <mat-divider [vertical]="true"></mat-divider>
+  <button mat-button routerLink="/students" routerLinkActive="mat-accent">Students</button>
+  <span class="right-spacer"></span>
+  <mat-divider [vertical]="true"></mat-divider>
+  <button mat-icon-button matTooltip="Submit Homework" (click)="onClickUploadHomework()" aria-label="Submit">
+    <mat-icon>add</mat-icon>
+  </button>
+  <mat-divider [vertical]="true"></mat-divider>
+  <button mat-icon-button routerLink="/me" matTooltip="Profile" aria-label="Show">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-divider [vertical]="true"></mat-divider>
+  <button mat-icon-button (click)="onClickLogout()" matTooltip="Logout" aria-label="Logout">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
