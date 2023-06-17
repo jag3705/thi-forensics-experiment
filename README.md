@@ -8,10 +8,11 @@ The focus on this setup is to evaluate artifacts (ie. log files) to proof that a
 
 To run the playground, ensure to have Docker and Docker Compose available.
 
- - Access to byte.it Docker Registry is required
- - Hardcoded domains need to point to your local machine
+- Access to official Docker Registry is required
+ - Hardcoded domains need to point to your local machine (e.g. set them in your `/etc/hosts` file)
    - `thi-app.test` -> Frontend for browser access
    - `backend.thi-app.test` -> Backend for API calls and access to user defined assets
+   -  `token-crawler.test` -> Backend for API calls of the simulated attacker
  - Run `docker-compose up` to start the playground
    - Ensure that DB seeding took place, takes multiple restarts of Backend sometimes
  - Go to `http://thi-app.test` in a browser that does not enforce HTTPS
